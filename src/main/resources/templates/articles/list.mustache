@@ -1,0 +1,26 @@
+{{>layouts/header}}
+	
+<!-- 부트 스트랩 table 참고 -->
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">id</th>
+      <th scope="col">title</th>
+      <th scope="col">content</th>
+    </tr>
+  </thead>
+  <tbody>
+     {{#articleList}}
+    <tr>
+     
+      <th scope="row">{{id}}</th>
+      <td><a href="/articles/{{id}}">{{title}}</a></td>
+      <td>{{content}}</td>
+    </tr>
+     {{/articleList}} 
+  </tbody>
+</table>	
+	
+	<a href="/articles/WriteForm" class="btn btn-primary">새글 쓰기</a>
+{{>layouts/footer}}

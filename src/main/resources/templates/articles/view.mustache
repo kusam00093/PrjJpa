@@ -1,0 +1,30 @@
+{{>layouts/header}}
+	
+<!-- 부트 스트랩 table 참고 -->
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">id</th>
+      <th scope="col">title</th>
+      <th scope="col">content</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+     {{!주석입니다}}
+     {{! #article}}
+      <th scope="row">{{article.id}}</th>
+      <td>{{article.title}}</td>
+      <td>{{article.content}}</td>
+     {{! /article}} 
+    </tr>
+  </tbody>
+</table>	
+
+<a href="/articles/List">목록으로</a>
+<a href="/articles/WriteForm">새 글쓰기</a>
+<a href="/articles/{{id}}/EditForm">수정</a>
+<a href="/articles/{{id}}/Delete">삭제</a>
+	
+{{>layouts/footer}}
