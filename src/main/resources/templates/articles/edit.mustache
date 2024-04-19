@@ -1,23 +1,19 @@
 {{>layouts/header}}
-	
-<!-- 부트 스트랩 table 참고 -->
 
-<table class="table">
-  <thead>
-    <tr>
-      <th scope="col">id</th>
-      <th scope="col">title</th>
-      <th scope="col">content</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th scope="row"><input type="text" name="id" value="{{article.id}}"/></th>
-      <td><input type="text" name="title" value="{{article.title}}"/></td>
-      <td><input type="text" name="content" value="{{article.content}}"/></td> </tr>
-  </tbody>
-</table>	
-
-<a href="/aritcles/{{id}}/Edit">수정</a>
+{{#article}}	
+	<form class="container" action="/articles/Edit" method="post">
+	<input type="hidden" name="id" value="{{id}}">
+   <div class="mb-3">
+     <label class="form-label">제목</label>
+     <input type="text" name="title" class="form-control" value="{{title}}"/>
+   </div>
+   <div class="mb-3">
+     <label class="form-label">내용</label>
+     <textarea class="form-control" name="content" rows="3" >{{content}}</textarea>
+   </div>
+   <button type="submit" class="btn btn-primary">수정하기</button>
+   <a href="/articles/List" class="btn btn-secondary">목록</a>
+</form>  
+{{/article}}	
 	
 {{>layouts/footer}}
